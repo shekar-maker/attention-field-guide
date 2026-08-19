@@ -11,9 +11,9 @@ An interactive, source-verified history of modern attention mechanisms—from ex
 
 The page is intentionally built as an explanatory instrument rather than a gallery of unrelated animations. Every mechanism answers the same six questions: what problem existed, what changed, what became cheaper, what became worse, when to choose it, and what later work tried to repair.
 
-## What the application contains
+## What this exploration contains
 
-- A chronological timeline with all mechanisms required by Assignment 8.
+- A chronological research challenge tracing how attention mechanisms evolved—and the thought process behind each response to a new computational bottleneck.
 - Filters for position, compute, KV/memory, retrieval, systems and hybrid approaches.
 - An attention-pattern experiment comparing dense, windowed, structured-sparse and top-k edges.
 - A mechanism comparison instrument with compute, memory, access and context trade-offs.
