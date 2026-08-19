@@ -62,3 +62,7 @@ next-env.d.ts
 /pnpm-lock.yaml
 /public/
 /.source-control/
+.git.backup/
+.source-control/
+*.zip
+*.tar.gz
