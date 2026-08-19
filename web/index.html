@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#090d15">
+  <meta name="description" content="A source-verified visual history of attention—from exact softmax to compressed, sparse and recurrent memory.">
+  <meta property="og:title" content="The Attention Field Guide">
+  <meta property="og:description" content="The bottleneck moved. Attention evolved with it.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="/og.png">
+  <title>The Attention Field Guide</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="scroll-meter" aria-hidden="true"><span id="scroll-meter"></span></div>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Attention Field Guide home">
+      <span class="brand-mark">A<sup>2</sup></span>
+      <span>ATTENTION<br>FIELD GUIDE</span>
+    </a>
+    <nav aria-label="Primary navigation">
+      <a href="#timeline">Timeline</a>
+      <a href="#lab">Mechanism lab</a>
+      <a href="#forecast">Forecast</a>
+      <a class="source-link" href="#sources">Primary sources ↗</a>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="pulse"></span> A field history, 2017—2026</p>
+        <h1 id="hero-title">Attention did not simply get <em>better.</em><br>Its bottleneck <span>moved.</span></h1>
+        <p class="lede">A source-verified visual map of the ideas that changed how models position, remember, retrieve and pay for context.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#timeline">Follow the pressure →</a>
+          <button class="button ghost" id="surprise-me" type="button">Inspect a random mechanism</button>
+        </div>
+      </div>
+
+      <aside class="hero-instrument" aria-label="Attention pressure instrument">
+        <div class="instrument-head"><span>FIELD INSTRUMENT 08</span><span>LIVE MODEL</span></div>
+        <div class="orbit-stage" aria-hidden="true">
+          <div class="orbit orbit-a"><i></i><i></i><i></i></div>
+          <div class="orbit orbit-b"><i></i><i></i><i></i><i></i></div>
+          <div class="orbit-core">Q·K<sup>T</sup></div>
+        </div>
+        <div class="instrument-readout">
+          <div><strong>22</strong><span>landmarks</span></div>
+          <div><strong>06</strong><span>pressures</span></div>
+          <div><strong>09</strong><span>years</span></div>
+        </div>
+      </aside>
+    </section>
+
+    <section class="pressure-band" aria-labelledby="pressure-title">
+      <div class="shell">
+        <p class="section-kicker" id="pressure-title">THE ACTUAL STORY</p>
+        <div class="pressure-flow" aria-label="Historical pressure sequence">
+          <article><small>01 · 2017</small><strong>Make access exact</strong><span>Every token can retrieve every token.</span></article>
+          <b>→</b>
+          <article><small>02 · 2019</small><strong>Make it affordable</strong><span>Remove edges, windows or softmax.</span></article>
+          <b>→</b>
+          <article><small>03 · 2021</small><strong>Make position travel</strong><span>Relative geometry replaces tables.</span></article>
+          <b>→</b>
+          <article><small>04 · 2023</small><strong>Make memory serve</strong><span>The KV cache becomes the product bottleneck.</span></article>
+          <b>→</b>
+          <article><small>05 · NOW</small><strong>Combine imperfect memories</strong><span>State, compression and sparse exact reads.</span></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="timeline-section shell" id="timeline" aria-labelledby="timeline-title">
+      <div class="section-intro">
+        <div>
+          <p class="section-kicker">CHRONOLOGY, NOT TAXONOMY</p>
+          <h2 id="timeline-title">Each answer created<br>a new bill.</h2>
+        </div>
+        <p>Filter by the pressure a mechanism answered. Every card states both sides of the bargain: what became cheaper and what became worse.</p>
+      </div>
+
+      <div class="filter-bar" role="group" aria-label="Filter timeline by pressure">
+        <button class="filter active" data-family="all" type="button">All <span id="all-count">22</span></button>
+        <button class="filter" data-family="position" type="button"><i style="--chip:#b79cff"></i>Position</button>
+        <button class="filter" data-family="compute" type="button"><i style="--chip:#66d9c6"></i>Compute</button>
+        <button class="filter" data-family="memory" type="button"><i style="--chip:#ff8066"></i>KV / memory</button>
+        <button class="filter" data-family="retrieval" type="button"><i style="--chip:#58a9ff"></i>Retrieval</button>
+        <button class="filter" data-family="systems" type="button"><i style="--chip:#e7eaef"></i>Systems</button>
+        <button class="filter" data-family="hybrid" type="button"><i style="--chip:#ff70bd"></i>Hybrid</button>
+      </div>
+
+      <div class="timeline" id="timeline-list" aria-live="polite"></div>
+    </section>
+
+    <section class="lab-section" id="lab" aria-labelledby="lab-title">
+      <div class="shell">
+        <div class="section-intro light">
+          <div><p class="section-kicker">MECHANISM LAB</p><h2 id="lab-title">Spend the attention<br>budget yourself.</h2></div>
+          <p>Two small experiments separate three ideas people often mix together: fewer attention edges, fewer KV heads, and a smaller recurrent state.</p>
+        </div>
+
+        <div class="lab-grid">
+          <article class="lab-card pattern-card">
+            <header><span>EXPERIMENT 01</span><strong>Which token pairs are allowed?</strong></header>
+            <div class="segmented" id="pattern-controls" role="group" aria-label="Attention pattern">
+              <button class="active" data-pattern="dense" type="button">Dense</button>
+              <button data-pattern="window" type="button">Window</button>
+              <button data-pattern="sparse" type="button">Sparse</button>
+              <button data-pattern="topk" type="button">Top-k</button>
+            </div>
+            <div class="matrix-wrap">
+              <div class="axis y">query →</div>
+              <div class="attention-matrix" id="attention-matrix" role="img" aria-label="Dense causal attention matrix"></div>
+              <div class="axis x">key →</div>
+            </div>
+            <div class="lab-result"><strong id="pattern-cost">78 / 144 edges</strong><span id="pattern-note">Exact causal access to the entire prefix.</span></div>
+          </article>
+
+          <article class="lab-card compare-card">
+            <header><span>EXPERIMENT 02</span><strong>Compare two bargains</strong></header>
+            <div class="compare-pickers">
+              <label>A<select id="compare-a" aria-label="First mechanism"></select></label>
+              <span>versus</span>
+              <label>B<select id="compare-b" aria-label="Second mechanism"></select></label>
+            </div>
+            <div class="compare-table" id="compare-table"></div>
+            <p class="lab-footnote">There is no universal winner. The right choice depends on which bill dominates your system.</p>
+          </article>
+        </div>
+
+        <article class="cache-card">
+          <div class="cache-copy">
+            <p class="section-kicker">THE SECOND BILL</p>
+            <h3>KV cache is not<br>quadratic compute.</h3>
+            <p>During decoding, every layer stores past keys and values. Sharing KV heads changes the slope; it does not make the slope disappear.</p>
+            <code>bytes = 2 × layers × kv_heads × head_dim × tokens × batch × precision</code>
+          </div>
+          <div class="cache-controls">
+            <label>Layers <output id="layers-out">48</output><input id="layers" type="range" min="8" max="96" value="48" step="8"></label>
+            <label>KV heads <output id="heads-out">8</output><input id="heads" type="range" min="1" max="64" value="8" step="1"></label>
+            <label>Context <output id="context-out">32K</output><input id="context" type="range" min="4096" max="131072" value="32768" step="4096"></label>
+            <label>Batch <output id="batch-out">1</output><input id="batch" type="range" min="1" max="16" value="1" step="1"></label>
+          </div>
+          <div class="cache-result">
+            <span>BF16 KV CACHE</span>
+            <strong id="cache-value">6.00 GiB</strong>
+            <div class="cache-bar"><i id="cache-bar"></i></div>
+            <p id="cache-explain">One user. Change KV heads to see MHA → GQA → MQA.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="forecast shell" id="forecast" aria-labelledby="forecast-title">
+      <div class="forecast-number">→ 09</div>
+      <div class="forecast-copy">
+        <p class="section-kicker">THE NEXT LIKELY MOVE</p>
+        <h2 id="forecast-title">Not one perfect memory.<br><span>A portfolio of imperfect ones.</span></h2>
+        <p>The evidence points toward hybrid depth schedules: cheap recurrent or local layers for most tokens, compressed memory for continuity, and occasional learned sparse exact reads when uncertainty or retrieval value justifies the cost.</p>
+        <div class="forecast-stack" aria-label="Predicted hybrid stack">
+          <div><span>Most layers</span><strong>Gated state / local window</strong><small>cheap continuity</small></div>
+          <div><span>Some layers</span><strong>Compressed memory</strong><small>long-range summary</small></div>
+          <div><span>Few layers</span><strong>Sparse exact retrieval</strong><small>high-value recall</small></div>
+        </div>
+      </div>
+      <blockquote>“Long context” is not a number. It is a system spanning position, compute, cache, training data and evaluation.</blockquote>
+    </section>
+
+    <section class="sources-section" id="sources" aria-labelledby="sources-title">
+      <div class="shell">
+        <div class="section-intro light">
+          <div><p class="section-kicker">AUDIT TRAIL</p><h2 id="sources-title">Dates you can<br>trace to origin.</h2></div>
+          <p>Dates use the first public paper submission or official release. NTK-aware scaling is correctly marked as a community release—not rewritten as a paper.</p>
+        </div>
+        <ol class="source-ledger" id="source-ledger"></ol>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="shell"><strong>ATTENTION FIELD GUIDE · SESSION 8</strong><span>Built for correctness before spectacle.</span><a href="#top">Back to top ↑</a></div>
+  </footer>
+
+  <dialog id="mechanism-dialog" aria-labelledby="dialog-title">
+    <button class="dialog-close" id="dialog-close" type="button" aria-label="Close mechanism detail">×</button>
+    <div id="dialog-content"></div>
+  </dialog>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+{
+  "name": "attention-field-guide",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A source-verified visual history of modern attention mechanisms.",
+  "scripts": {
+    "dev": "node scripts/serve.mjs",
+    "build": "node scripts/build.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --test tests/*.test.mjs && node scripts/build.mjs"
+  }
+}

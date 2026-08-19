@@ -1,0 +1,5 @@
+{
+  "buildCommand": "node scripts/build.mjs",
+  "outputDirectory": "dist/client",
+  "cleanUrls": true
+}
