@@ -35,9 +35,13 @@ const sourceData = (await readFile(path.join(web, "data.js"), "utf8"))
 const sourceApp = (await readFile(path.join(web, "app.js"), "utf8"))
   .replace(/^import .*?;\r?\n/, "");
 const preview = sourceHtml
-  .replace('<link rel="stylesheet" href="/styles.css">', `<style>${sourceCss}</style>`)
+  .replace('<link rel="stylesheet" href="./styles.css">', `<style>${sourceCss}</style>`)
   .replace('<script type="module" src="/app.js"></script>', `<script type="module">${sourceData}\n${sourceApp}</script>`);
 await writeFile(path.join(dist, "preview.html"), preview, "utf8");
+
+// Keep the Netlify entry point self-contained so the visual design still works
+// even when a manual drag-and-drop deployment misses sibling asset files.
+await writeFile(path.join(client, "index.html"), preview, "utf8");
 
 await mkdir(path.join(dist, "server"), { recursive: true });
 await writeFile(path.join(dist, "server", "index.js"), `
