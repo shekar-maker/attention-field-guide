@@ -6,8 +6,8 @@ An interactive, source-verified history of modern attention mechanisms—from ex
 
 ## Live application
 
-- **Live site:** https://attention-field-guide-era5.ramachandran-shekar.chatgpt.site
-- **Repository:** add the public GitHub URL here
+- **Live site:** https://attention-field-guide.netlify.app/
+- **Repository:** https://github.com/shekar-maker/attention-field-guide
 
 The page is intentionally built as an explanatory instrument rather than a gallery of unrelated animations. Every mechanism answers the same six questions: what problem existed, what changed, what became cheaper, what became worse, when to choose it, and what later work tried to repair.
 
