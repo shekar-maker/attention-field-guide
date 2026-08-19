@@ -27,7 +27,7 @@ FlashAttention is important because it demonstrated that an attention bottleneck
 
 ## Question 3 — Optional social post
 
-> Why are there so many attention mechanisms? Because the bottleneck kept moving. I built an interactive, source-verified timeline from scaled dot-product attention and positional encodings through sparse/linear attention, MQA/GQA/MLA, RoPE extensions, Gated DeltaNet, DroPE and DeepSeek's compressed sparse systems. The main lesson: longer context is not one number—it is a negotiation between exactness, compute, KV memory, position, training and retrieval. Explore the field guide: https://attention-field-guide.netlify.app/ #ERA5 #Transformers #Attention #MachineLearning
+> Why are there so many attention mechanisms? Because the bottleneck kept moving. I built an interactive, source-verified timeline from scaled dot-product attention and positional encodings through sparse/linear attention, MQA/GQA/MLA, RoPE extensions, Gated DeltaNet, DroPE and DeepSeek's compressed sparse systems. The main lesson: longer context is not one number—it is a negotiation between exactness, compute, KV memory, position, training and retrieval. Explore the field guide: https://attention-field-guide.netlify.app/ #Transformers #Attention #MachineLearning
 
 After publishing the post, add its URL to the optional submission field.
 

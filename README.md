@@ -61,15 +61,16 @@ Dates use the **first public paper submission or official release**, not confere
 
 NTK-aware scaling began as a community post and code experiment, not an academic paper. The app preserves that provenance. DeepSeek Sparse Attention and DeepSeek V4 compressed attention are separated because they are distinct public milestones rather than one vague “DeepSeek attention” entry.
 
-## Relation to the ERA V5 sessions
+## Research framing
 
-- The early sessions establish the Transformer and token sequence that attention receives.
-- The tokenization session matters because tokenizer fertility changes how much comparable text fits inside the same nominal context window.
-- The data sessions matter because architectural context length is useless without sufficiently long and representative training examples.
-- Session 7 provides the `[B, T, D]` representation and explains why attention without position reads a set.
-- Session 8 supplies the two-bill framework: quadratic attention compute versus the linear per-user KV-cache bill.
+Understanding attention requires more than placing papers in date order. This exploration treats tokenization, training data, sequence representation, positional information, compute and memory as parts of one connected system:
 
-The site keeps those dependencies visible without turning Sessions 1–7 into unrelated timeline cards.
+- Tokenization changes how much comparable text fits inside a nominal context window.
+- Long-context architecture is useful only when training data contains sufficiently long and representative examples.
+- The `[B, T, D]` representation helps explain why attention without positional information reads a sequence like a set.
+- Long-context inference creates two different costs: attention computation and the per-user KV-cache memory bill.
+
+The timeline keeps these dependencies visible while remaining focused on the mechanisms that changed how attention operates.
 
 ## Run locally
 

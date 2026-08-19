@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import { mechanisms, requiredIds } from "../web/data.js";
 
-test("every required Assignment 8 mechanism is covered", () => {
+test("every required attention mechanism is covered", () => {
   const ids = new Set(mechanisms.map(item => item.id));
   assert.deepEqual(requiredIds.filter(id => !ids.has(id)), []);
 });
